@@ -30,6 +30,7 @@
 @property(nonatomic, copy) NSString *tableHeaderBasicInfo;
 @property(nonatomic, copy) NSString *mailDidFinishWithError;
 @property(nonatomic, copy) NSString *buttonMail;
+@property(nonatomic, copy) NSString *note;
 
 - (instancetype)initWithTopics:(NSArray *) theTopics;
 
