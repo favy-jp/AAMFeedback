@@ -1,6 +1,6 @@
 PODS:
   - KIF (2.0.0)
-  - UIDeviceIdentifier (1.0.2)
+  - UIDeviceIdentifier (1.0.3)
 
 DEPENDENCIES:
   - KIF (~> 2.0)
@@ -8,7 +8,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   KIF: 28b15535a46fafddb318217fe97819d2755ed1ef
-  UIDeviceIdentifier: 92865347811e6ab6de414a7b751bb876080d70b7
+  UIDeviceIdentifier: 3d1bf1348e27546c8ebeef2f02ce11ddb32730e7
 
 PODFILE CHECKSUM: c9097c803d275fc87fbe628ffd30c062e0302be5
 
