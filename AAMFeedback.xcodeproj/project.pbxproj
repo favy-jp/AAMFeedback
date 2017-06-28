@@ -372,6 +372,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Art & Mobile";
 				TargetAttributes = {
+					3D02635D14861E3700FBC566 = {
+						DevelopmentTeam = 667RSF8RJ3;
+					};
 					739B28581820FE7D00AC9D97 = {
 						TestTargetID = 3D02635D14861E3700FBC566;
 					};
@@ -486,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		95BB01D1E4E8B31B28604D5D /* [CP] Copy Pods Resources */ = {
@@ -516,7 +519,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -693,6 +696,7 @@
 			baseConfigurationReference = 15D04F37353C995A8D7DB873 /* Pods-AAMFeedback.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEVELOPMENT_TEAM = 667RSF8RJ3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AAMFeedback/AAMFeedback-Prefix.pch";
 				INFOPLIST_FILE = "AAMFeedback/AAMFeedback-Info.plist";
@@ -710,6 +714,7 @@
 			baseConfigurationReference = DCBB6A4FA516308FC24FD14B /* Pods-AAMFeedback.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEVELOPMENT_TEAM = 667RSF8RJ3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AAMFeedback/AAMFeedback-Prefix.pch";
 				INFOPLIST_FILE = "AAMFeedback/AAMFeedback-Info.plist";

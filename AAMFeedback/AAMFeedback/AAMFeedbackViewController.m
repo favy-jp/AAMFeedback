@@ -416,12 +416,13 @@ static BOOL _alwaysUseMainBundle = NO;
 }
 
 - (NSString *)_feedbackBody {
-    NSString *body = [NSString stringWithFormat:@"%@\n\n\nDevice:\n%@\n\niOS:\n%@\n\nApp:\n%@ %@",
+    NSString *body = [NSString stringWithFormat:@"%@\n\n\nDevice:\n%@\n\niOS:\n%@\n\nApp:\n%@ %@ %@",
                                                 self.descriptionTextView.text,
                                                 [self _platformString],
                                                 [UIDevice currentDevice].systemVersion,
                                                 [self _appName],
-                                                [self _appVersion]];
+                                                [self _appVersion],
+                                                [self note]];
 
     return body;
 }
