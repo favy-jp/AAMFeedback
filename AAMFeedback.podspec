@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'AAMFeedback'
-  s.version  = '0.7.1'
+  s.version  = '0.7.2'
   s.summary  = 'iOS user feedback component for universal use.'
   s.homepage = 'https://github.com/PlusR/AAMFeedback'
   s.authors  = { 'fladdict' => 'fukatsu@gmail.com', 'azu' => 'azuciao@gmail.com' , 'PlusR' => 'sp@plusr.co.jp'}
