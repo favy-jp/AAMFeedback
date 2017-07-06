@@ -171,29 +171,46 @@ static BOOL _alwaysUseMainBundle = NO;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 2;
+    switch (section) {
+        case 0:
+            return 1;
+        case 1:
+            return 2;
+        case 2:
+            return 4;
+        default:
+            return 0;
     }
-    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 1) {
-        return MAX(88, [self contentSizeOfTextView:self.descriptionTextView].height);
+    switch (indexPath.section) {
+        case 0:
+            return 88;
+        case 1:
+            switch (indexPath.row) {
+                case 1:
+                    return MAX(88, [self contentSizeOfTextView:self.descriptionTextView].height);
+                default:
+                    break;
+            }
+        default:
+            break;
     }
-
     return 44;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return self.tableHeaderTopics;
+            return @"お知らせ";
         case 1:
+            return self.tableHeaderTopics;
+        case 2:
             return self.tableHeaderBasicInfo;
         default:
             break;
@@ -206,10 +223,14 @@ static BOOL _alwaysUseMainBundle = NO;
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        if (indexPath.section == 1) {
+        if (indexPath.section == 0) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.textLabel.numberOfLines = 0;
+            cell.detailTextLabel.numberOfLines = 0;
+        } else if (indexPath.section == 2) {
             //General Infos
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        } else {
+        } else if (indexPath.section == 1) {
             if (indexPath.row == 0) {
                 //Topics
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
@@ -247,9 +268,13 @@ static BOOL _alwaysUseMainBundle = NO;
     // Configure the cell...
     switch (indexPath.section) {
         case 0:
+            cell.textLabel.text = @"メールの受信設定により返信メールが届かない場合がございます。\n@karadanote.jp の受信ができるように設定の確認をお願いいたします。";
+            cell.textLabel.textColor = [UIColor redColor];
+            cell.textLabel.font = [UIFont systemFontOfSize:14];
+            break;
+        case 1:
             switch (indexPath.row) {
                 case 0:
-
                     cell.textLabel.text = self.topicsTitle;
                     cell.detailTextLabel.text = [self _selectedTopic];
                     break;
@@ -258,7 +283,7 @@ static BOOL _alwaysUseMainBundle = NO;
                     break;
             }
             break;
-        case 1:
+        case 2:
             switch (indexPath.row) {
                 case 0:
                     cell.textLabel.text = @"Device";
@@ -295,7 +320,7 @@ static BOOL _alwaysUseMainBundle = NO;
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 0) {
+    if (indexPath.section == 1 && indexPath.row == 0) {
         [self.descriptionTextView resignFirstResponder];
         AAMFeedbackTopicsViewController *topicsViewController = [[AAMFeedbackTopicsViewController alloc] initWithStyle:UITableViewStyleGrouped];
         if (self.backgroundImage != nil) {
