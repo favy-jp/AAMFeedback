@@ -26,6 +26,8 @@
 
 @property(nonatomic, copy) NSString *descriptionPlaceHolder;
 @property(nonatomic, copy) NSString *topicsTitle;
+@property(nonatomic, copy) NSString *attention;
+@property(nonatomic, copy) NSString *tableHeaderAttention;
 @property(nonatomic, copy) NSString *tableHeaderTopics;
 @property(nonatomic, copy) NSString *tableHeaderBasicInfo;
 @property(nonatomic, copy) NSString *mailDidFinishWithError;

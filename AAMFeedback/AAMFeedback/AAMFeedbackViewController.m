@@ -90,12 +90,12 @@ static BOOL _alwaysUseMainBundle = NO;
     ];
     self.topicsToSend = [self.topics copy];
     self.descriptionPlaceHolder = NSLocalizedStringFromTableInBundle(@"AAMFeedbackDescriptionPlaceholder", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
+    self.attention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.topicsTitle = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTopicsTitle", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
-    self.tableHeaderTopics = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderTopics", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
+    self.tableHeaderAttention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.tableHeaderBasicInfo = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderBasicInfo", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.mailDidFinishWithError = NSLocalizedStringFromTableInBundle(@"AAMFeedbackMailDidFinishWithError", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.buttonMail = NSLocalizedStringFromTableInBundle(@"AAMFeedbackButtonMail", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
-
 }
 
 + (void)setAlwaysUseMainBundle:(BOOL)alwaysUseMainBundle {
@@ -177,7 +177,7 @@ static BOOL _alwaysUseMainBundle = NO;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return 1;
+            return self.attention.length > 0 ? 1 : 0;
         case 1:
             return 2;
         case 2:
@@ -187,19 +187,10 @@ static BOOL _alwaysUseMainBundle = NO;
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 0;
-        default:
-            return 44;
-    }
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-            return 88;
+            return self.attention.length > 0 ? 88 : 0;
         case 1:
             switch (indexPath.row) {
                 case 1:
@@ -216,7 +207,7 @@ static BOOL _alwaysUseMainBundle = NO;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"";
+            return self.tableHeaderAttention;
         case 1:
             return self.tableHeaderTopics;
         case 2:
@@ -277,7 +268,7 @@ static BOOL _alwaysUseMainBundle = NO;
     // Configure the cell...
     switch (indexPath.section) {
         case 0:
-            cell.textLabel.text = @"メールの受信設定により返信メールが届かない場合がございます。\n@karadanote.jp の受信ができるように設定の確認をお願いいたします。";
+            cell.textLabel.text = self.attention;
             cell.textLabel.textColor = [UIColor redColor];
             cell.textLabel.font = [UIFont systemFontOfSize:14];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
