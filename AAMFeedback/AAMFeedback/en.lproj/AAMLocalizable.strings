@@ -6,18 +6,21 @@
   Copyright (c) 2011年 Art & Mobile. All rights reserved.
 */
 
-//Navigation Controller Elements
+// Navigation Controller Elements
 "AAMFeedbackTitle" = "Feedback";
 "AAMFeedbackTopicsTitle" = "Topics";
-
 "AAMFeedbackButtonMail" = "Mail";
 "AAMFeedbackDescriptionPlaceholder" = "Please write for details.";
 
-//Table Headers
+// Table Headers
+"AAMFeedbackTableHeaderAttention" = "Attention.";
 "AAMFeedbackTableHeaderTopics" = "Please Fill";
 "AAMFeedbackTableHeaderBasicInfo" = "Your Environment";
 
-//Topics Options
+// Attention
+"AAMFeedbackAttention" = "Please confirm the setting so that you can receive @karadanote.jp.";
+
+// Topics Options
 "AAMFeedbackTopicsQuestion" = "Question";
 "AAMFeedbackTopicsRequest" = "Request";
 "AAMFeedbackTopicsBugReport" = "Bug Report";
@@ -25,4 +28,5 @@
 "AAMFeedbackTopicsBusiness" = "Business";
 "AAMFeedbackTopicsOther" = "Other";
 
+// Errors
 "AAMFeedbackMailDidFinishWithError" = "Failed to send your feedback. Please try later.";
