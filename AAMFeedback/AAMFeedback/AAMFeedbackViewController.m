@@ -187,6 +187,15 @@ static BOOL _alwaysUseMainBundle = NO;
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 0;
+        default:
+            return 44;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
@@ -207,7 +216,7 @@ static BOOL _alwaysUseMainBundle = NO;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"お知らせ";
+            return @"";
         case 1:
             return self.tableHeaderTopics;
         case 2:
@@ -271,6 +280,7 @@ static BOOL _alwaysUseMainBundle = NO;
             cell.textLabel.text = @"メールの受信設定により返信メールが届かない場合がございます。\n@karadanote.jp の受信ができるように設定の確認をお願いいたします。";
             cell.textLabel.textColor = [UIColor redColor];
             cell.textLabel.font = [UIFont systemFontOfSize:14];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             break;
         case 1:
             switch (indexPath.row) {
