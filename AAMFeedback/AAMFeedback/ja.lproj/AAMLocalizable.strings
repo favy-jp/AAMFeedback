@@ -30,3 +30,4 @@
 
 // Errors
 "AAMFeedbackMailDidFinishWithError" = "送信に失敗しました。しばらく時間をおいてからもう一度お試しください。";
+"AAMFeedbackRequireDescriptionError" = "詳細を記入してください。";

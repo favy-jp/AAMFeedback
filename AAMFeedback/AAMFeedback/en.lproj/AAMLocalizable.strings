@@ -30,3 +30,4 @@
 
 // Errors
 "AAMFeedbackMailDidFinishWithError" = "Failed to send your feedback. Please try later.";
+"AAMFeedbackRequireDescriptionError" = "Please write description.";

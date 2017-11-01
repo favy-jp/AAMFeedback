@@ -28,3 +28,4 @@
 
 // Errors
 "AAMFeedbackMailDidFinishWithError" = "No se pudo enviar sus comentarios. Por favor, inténtelo más tarde.";
+"AAMFeedbackRequireDescriptionError" = "Please write description.";
