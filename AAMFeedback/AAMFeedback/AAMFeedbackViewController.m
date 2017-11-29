@@ -206,7 +206,7 @@ static BOOL _alwaysUseMainBundle = NO;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return self.tableHeaderAttention;
+            return self.attention.length > 0 ? self.tableHeaderAttention : nil;
         case 1:
             return self.tableHeaderTopics;
         case 2:
