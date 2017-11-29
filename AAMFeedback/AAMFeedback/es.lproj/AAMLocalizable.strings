@@ -15,9 +15,6 @@
 "AAMFeedbackTableHeaderTopics" = "Por favor, complete";
 "AAMFeedbackTableHeaderBasicInfo" = "Tu Entorno";
 
-// Attention
-"AAMFeedbackAttention" = "Gracias a comprobar la configuración para permitir la recepción de @karadanote.jp.";
-
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "Pregunta";
 "AAMFeedbackTopicsRequest" = "Solicitud";

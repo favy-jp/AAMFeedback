@@ -90,7 +90,6 @@ static BOOL _alwaysUseMainBundle = NO;
     ];
     self.topicsToSend = [self.topics copy];
     self.descriptionPlaceHolder = NSLocalizedStringFromTableInBundle(@"AAMFeedbackDescriptionPlaceholder", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
-    self.attention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.topicsTitle = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTopicsTitle", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.tableHeaderAttention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.tableHeaderBasicInfo = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderBasicInfo", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
