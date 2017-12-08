@@ -447,7 +447,7 @@ static BOOL _alwaysUseMainBundle = NO;
                                                 [UIDevice currentDevice].systemVersion,
                                                 [self _appName],
                                                 [self _appVersion],
-                                                [self note]];
+                                                [self _note]];
 
     return body;
 }
@@ -470,6 +470,10 @@ static BOOL _alwaysUseMainBundle = NO;
 
 - (NSString *)_appVersion {
     return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+}
+
+- (NSString *)_note {
+    return self.note ?: @"";
 }
 
 
