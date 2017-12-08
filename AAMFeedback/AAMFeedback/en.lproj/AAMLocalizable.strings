@@ -17,9 +17,6 @@
 "AAMFeedbackTableHeaderTopics" = "Please Fill";
 "AAMFeedbackTableHeaderBasicInfo" = "Your Environment";
 
-// Attention
-"AAMFeedbackAttention" = "Please confirm the setting so that you can receive @karadanote.jp.";
-
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "Question";
 "AAMFeedbackTopicsRequest" = "Request";

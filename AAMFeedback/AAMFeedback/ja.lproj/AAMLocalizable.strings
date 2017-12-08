@@ -17,9 +17,6 @@
 "AAMFeedbackTableHeaderTopics" = "入力事項";
 "AAMFeedbackTableHeaderBasicInfo" = "動作環境の情報";
 
-// Attention
-"AAMFeedbackAttention" = "メールの受信設定により返信メールが届かない場合がございます。\n@karadanote.jp の受信ができるように設定の確認をお願いいたします。";
-
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "質問";
 "AAMFeedbackTopicsRequest" = "リクエスト";
