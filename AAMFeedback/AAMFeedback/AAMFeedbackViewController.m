@@ -90,7 +90,6 @@ static BOOL _alwaysUseMainBundle = NO;
     ];
     self.topicsToSend = [self.topics copy];
     self.descriptionPlaceHolder = NSLocalizedStringFromTableInBundle(@"AAMFeedbackDescriptionPlaceholder", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
-    self.attention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.topicsTitle = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTopicsTitle", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.tableHeaderAttention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.tableHeaderBasicInfo = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderBasicInfo", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
@@ -207,7 +206,7 @@ static BOOL _alwaysUseMainBundle = NO;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return self.tableHeaderAttention;
+            return self.attention.length > 0 ? self.tableHeaderAttention : nil;
         case 1:
             return self.tableHeaderTopics;
         case 2:
@@ -448,7 +447,7 @@ static BOOL _alwaysUseMainBundle = NO;
                                                 [UIDevice currentDevice].systemVersion,
                                                 [self _appName],
                                                 [self _appVersion],
-                                                [self note]];
+                                                [self _note]];
 
     return body;
 }
@@ -471,6 +470,10 @@ static BOOL _alwaysUseMainBundle = NO;
 
 - (NSString *)_appVersion {
     return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+}
+
+- (NSString *)_note {
+    return self.note ?: @"";
 }
 
 
