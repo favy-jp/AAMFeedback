@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   AAMFeedbackViewController
 
@@ -18,7 +18,7 @@
 "AAMFeedbackTableHeaderBasicInfo" = "動作環境の情報";
 
 // Attention
-"AAMFeedbackAttention" = "メールの受信設定により返信メールが届かない場合がございます。\n@favy.jp の受信ができるように設定の確認をお願いいたします。";
+"AAMFeedbackAttention" = "メールの受信設定により返信メールが届かない場合がございます。\n@favy.co.jp の受信ができるように設定の確認をお願いいたします。";
 
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "質問";

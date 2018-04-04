@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   AAMFeedbackViewController
 
@@ -18,7 +18,7 @@
 "AAMFeedbackTableHeaderBasicInfo" = "Your Environment";
 
 // Attention
-"AAMFeedbackAttention" = "Please confirm the setting so that you can receive @favy.jp.";
+"AAMFeedbackAttention" = "Please confirm the setting so that you can receive @favy.co.jp.";
 
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "Question";
