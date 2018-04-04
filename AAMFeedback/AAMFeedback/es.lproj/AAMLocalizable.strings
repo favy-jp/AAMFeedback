@@ -16,7 +16,11 @@
 "AAMFeedbackTableHeaderBasicInfo" = "Tu Entorno";
 
 // Attention
+<<<<<<< HEAD
 "AAMFeedbackAttention" = "Gracias a comprobar la configuración para permitir la recepción de @favy.co.jp.";
+=======
+"AAMFeedbackAttention" = "Gracias a comprobar la configuración para permitir la recepción de @favy.jp.";
+>>>>>>> e86622237d009c2452c63a861c04a913ca68f8dc
 
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "Pregunta";
@@ -28,3 +32,4 @@
 
 // Errors
 "AAMFeedbackMailDidFinishWithError" = "No se pudo enviar sus comentarios. Por favor, inténtelo más tarde.";
+"AAMFeedbackRequireDescriptionError" = "Please write description.";

@@ -154,6 +154,11 @@ static BOOL _alwaysUseMainBundle = NO;
     [self.tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.descriptionTextView becomeFirstResponder];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
@@ -343,6 +348,18 @@ static BOOL _alwaysUseMainBundle = NO;
 }
 
 - (void)nextDidPress:(id)sender {
+    if ([self.descriptionTextView.text length] == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedStringFromTableInBundle(@"AAMFeedbackRequireDescriptionError", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil)
+                                                                       message:nil
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                    [self.descriptionTextView becomeFirstResponder];
+                                                }]];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
     [self.descriptionTextView resignFirstResponder];
     if (![[self class] isAvailable]) {
         return;
@@ -469,7 +486,7 @@ static BOOL _alwaysUseMainBundle = NO;
 }
 
 - (NSString *)_appVersion {
-    return [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
 }
 
 - (NSString *)_note {

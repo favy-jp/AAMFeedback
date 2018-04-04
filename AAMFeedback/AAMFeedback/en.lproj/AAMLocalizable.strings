@@ -18,7 +18,11 @@
 "AAMFeedbackTableHeaderBasicInfo" = "Your Environment";
 
 // Attention
+<<<<<<< HEAD
 "AAMFeedbackAttention" = "Please confirm the setting so that you can receive @favy.co.jp.";
+=======
+"AAMFeedbackAttention" = "Please confirm the setting so that you can receive @favy.jp.";
+>>>>>>> e86622237d009c2452c63a861c04a913ca68f8dc
 
 // Topics Options
 "AAMFeedbackTopicsQuestion" = "Question";
@@ -30,3 +34,4 @@
 
 // Errors
 "AAMFeedbackMailDidFinishWithError" = "Failed to send your feedback. Please try later.";
+"AAMFeedbackRequireDescriptionError" = "Please write description.";
