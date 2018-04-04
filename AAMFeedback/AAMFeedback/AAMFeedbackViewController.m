@@ -95,6 +95,7 @@ static BOOL _alwaysUseMainBundle = NO;
     self.tableHeaderBasicInfo = NSLocalizedStringFromTableInBundle(@"AAMFeedbackTableHeaderBasicInfo", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.mailDidFinishWithError = NSLocalizedStringFromTableInBundle(@"AAMFeedbackMailDidFinishWithError", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
     self.buttonMail = NSLocalizedStringFromTableInBundle(@"AAMFeedbackButtonMail", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
+    self.attention = NSLocalizedStringFromTableInBundle(@"AAMFeedbackAttention", @"AAMLocalizable", [AAMFeedbackViewController bundle], nil);
 }
 
 + (void)setAlwaysUseMainBundle:(BOOL)alwaysUseMainBundle {
